@@ -5,7 +5,21 @@ A distributed E-Commerce microservices platform built with Spring Boot 3, Apache
 ## 🏗️ System Architecture
 
 <img width="1536" height="1024" alt="sys5" src="https://github.com/user-attachments/assets/d3b82a70-730f-40d7-916c-f70f3d5cf2fa" />
+# Microservices E-Commerce System Architecture
 
+A complete **Microservices-based E-Commerce Architecture** built using:
+
+- Spring Boot
+- Spring Cloud Gateway
+- Netflix Eureka Service Discovery
+- Apache Kafka
+- PostgreSQL
+- Redis Cache
+- REST / Feign Client Communication
+- Event-Driven Saga Pattern (Choreography)
+- Database-per-Service Pattern
+
+---
 
 ### Architectural Components:
 * **API Gateway (Port 8080):** The single entry point for all clients, handling dynamic routing and load balancing using modern reactive programming.

@@ -16,20 +16,19 @@ A complete **Microservices-based E-Commerce Architecture** built using:
 - PostgreSQL
 - Redis Cache
 - REST / Feign Client Communication
-- Event-Driven Saga Pattern (Choreography)
+- Event-Driven Saga Pattern 
 - Database-per-Service Pattern
 
 ---
 
 ### Architectural Components:
-* **API Gateway (Port 8080):** The single entry point for all clients, handling dynamic routing and load balancing using modern reactive programming.
-* **Service Discovery (Port 8761):** Powered by **Netflix Eureka**, enabling dynamic service registration, health heartbeats, and client-side discovery.
-* **Order Service (Port 8081):** Manages order lifecycles, persists data to `order_db`, and orchestrates distributed Sagas.
-* **Product Service (Port 8082):** Handles product catalog management with high-speed **Redis Caching** layer over `product_db` for optimized read performance.
-* **Inventory Service (Port 8083):** Manages stock allocations and strict validations within `inventory_db`.
-* **Payment Service (Port 8084):** Simulates asynchronous payment authorization and transactions within `payment_db`.
+* **API Gateway (Port 8080):** The single entry point for all clients, handling dynamic routing, load balancing, and request filtering powered by Spring Cloud Gateway's high-performance, non-blocking routing engine.
+* **Service Discovery (Port 8761):** Powered by Netflix Eureka, enabling dynamic service registration, health heartbeats, and client-side discovery.
+* **Order Service (Port 8081):** Manages order lifecycles, persists data to order_db, and manages distributed Sagas.
+* **Product Service (Port 8082):** Handles product catalog management with high-speed Redis Caching layer over product_db for optimized read performance.
+* **Inventory Service (Port 8083):** Manages stock allocations and strict validations within inventory_db.
+* **Payment Service (Port 8084):** Simulates asynchronous payment authorization and transactions within payment_db.
 * **Notification Service (Port 8085):** A standalone microservice that asynchronously consumes event streams to trigger real-time client notifications via email.
-
 ---
 
 ## 🛠️ Tech Stack & Architectural Patterns
@@ -37,7 +36,7 @@ A complete **Microservices-based E-Commerce Architecture** built using:
 * **Core Framework:** Spring Boot 3 & Spring Cloud (Gateway, Eureka)
 * **Database-per-Service:** Isolated PostgreSQL 15 instances for independent data domains, eliminating tight data coupling.
 * **Asynchronous Messaging:** Apache Kafka acts as the highly-scalable distributed Event Bus.
-* **Distributed Transactions:** Choreography-based Saga Pattern with comprehensive compensating transactions (Rollbacks).
+* **Distributed Transactions:** Saga Pattern with comprehensive compensating transactions (Rollbacks).
 * **Caching Strategy:** Redis cache-aside pattern for catalog optimization.
 * **DevOps & Containerization:** Fully containerized setup via multi-stage Docker builds and Docker Compose orchestration.
 

@@ -1,0 +1,34 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: notification-service
+
+  # ----------------------------------------------------
+  # 1. Kafka Configuration
+  # ----------------------------------------------------
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: notification-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "com.ahmed.notification_service.events"
+
+  # ----------------------------------------------------
+  # 2. Mail Server Configuration
+  # ----------------------------------------------------
+  mail:
+    host: sandbox.smtp.mailtrap.io
+    port: 2525
+    username: your_mailtrap_username
+    password: your_mailtrap_password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true

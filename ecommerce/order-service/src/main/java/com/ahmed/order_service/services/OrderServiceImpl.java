@@ -10,6 +10,8 @@ import com.ahmed.order_service.events.OrderCreatedEvent;
 import com.ahmed.order_service.producers.OrderEventProducer;
 import com.ahmed.order_service.repositories.OrderRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.kafka.common.errors.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,6 +20,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 
@@ -98,5 +101,29 @@ public class OrderServiceImpl implements OrderService {
                 order.getTotalAmount(),
                 itemResponses
         );
+    }
+
+    @Override
+    @Transactional
+    public void cancelOrder(Long orderId) {
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new ResourceNotFoundException("Order not found with ID: " + orderId));
+
+        order.setStatus(OrderStatus.CANCELLED);
+        orderRepository.save(order);
+
+        log.info("Order ID: {} status updated to CANCELLED successfully", orderId);
+    }
+
+    @Override
+    @Transactional
+    public void completeOrder(Long orderId) {
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new ResourceNotFoundException("Order not found with ID: " + orderId));
+
+        order.setStatus(OrderStatus.COMPLETED);
+        orderRepository.save(order);
+
+        log.info("Order ID: {} has been successfully COMPLETED", orderId);
     }
 }

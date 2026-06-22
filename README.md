@@ -64,4 +64,8 @@ The entire system infrastructure and applications are fully dockerized. You do n
    git clone [https://github.com/AhmedMahmoud1447/ecommerce-microservices.git](https://github.com/AhmedMahmoud1447/ecommerce-microservices.git)
    cd ecommerce-microservices
     ```
-   
+2. Spin up the entire infrastructure cluster and applications with a single command:
+ ```bash
+docker compose up --build -d
+ ```
+

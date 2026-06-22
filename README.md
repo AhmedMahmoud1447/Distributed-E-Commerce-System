@@ -8,8 +8,9 @@ A high-performance, resilient, and enterprise-grade E-Commerce backend platform 
 
 The platform is designed around a decoupled microservices architecture. It leverages an **Event-Driven Choreography Saga Pattern** to handle distributed transactions across independent databases, ensuring eventual consistency without synchronous blocking.
 
-![System Architecture](![Uploading sys5.png…]()
-)
+![System Architecture](sys5.png)
+<img width="1536" height="1024" alt="sys5" src="https://github.com/user-attachments/assets/d3b82a70-730f-40d7-916c-f70f3d5cf2fa" />
+
 
 ### Architectural Components:
 * **API Gateway (Port 8080):** The single entry point for all clients, handling dynamic routing and load balancing using modern reactive programming.

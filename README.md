@@ -1,5 +1,6 @@
 # Enterprise E-Commerce Microservices Platform
 ---
+A distributed E-Commerce microservices platform built with Spring Boot 3, Apache Kafka (Event-Driven Saga), and Redis Caching. Features Database-per-Service (PostgreSQL), Netflix Eureka, and API Gateway routing—fully containerized with Docker.
 
 ## 🏗️ System Architecture
 

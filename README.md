@@ -6,8 +6,9 @@ A distributed E-Commerce microservices platform built with Spring Boot 3, Apache
 
 <img width="1536" height="1024" alt="sys5" src="https://github.com/user-attachments/assets/d3b82a70-730f-40d7-916c-f70f3d5cf2fa" />
 ---
-# Microservices E-Commerce System Architecture
 
+# Microservices E-Commerce System Architecture
+---
 A complete **Microservices-based E-Commerce Architecture** built using:
 
 - Spring Boot

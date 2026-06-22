@@ -4,8 +4,6 @@ A distributed E-Commerce microservices platform built with Spring Boot 3, Apache
 
 ## 🏗️ System Architecture
 
-The platform is designed around a decoupled microservices architecture. It leverages an **Event-Driven Choreography Saga Pattern** to handle distributed transactions across independent databases, ensuring eventual consistency without synchronous blocking.
-
 <img width="1536" height="1024" alt="sys5" src="https://github.com/user-attachments/assets/d3b82a70-730f-40d7-916c-f70f3d5cf2fa" />
 
 

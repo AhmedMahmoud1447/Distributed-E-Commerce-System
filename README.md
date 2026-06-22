@@ -1,7 +1,4 @@
 # Enterprise E-Commerce Microservices Platform
-
-A high-performance, resilient, and enterprise-grade E-Commerce backend platform built using **Spring Boot 3**, **Apache Kafka**, **Redis**, and **Docker**. The system strictly adheres to **SOLID principles**, **Clean Code** standards, and **Domain-Driven Design (DDD)** practices to ensure maintainability and scalable growth.
-
 ---
 
 ## 🏗️ System Architecture

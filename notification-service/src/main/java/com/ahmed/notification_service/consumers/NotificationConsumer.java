@@ -24,7 +24,7 @@ public class NotificationConsumer {
     public void handlePaymentSuccess(PaymentSuccessEvent event) {
         log.info("Processing PaymentSuccessEvent for Order ID: {}", event.orderId());
 
-        String subject = "Order Confirmed! 🎉";
+        String subject = "Order Confirmed! ";
         String body = "Hello,\n\nPayment was successful for Order #" + event.orderId() + ".\nWe are preparing your shipment.";
 
         emailService.sendEmail(CUSTOMER_EMAIL, subject, body);
@@ -38,7 +38,7 @@ public class NotificationConsumer {
     public void handlePaymentFailed(PaymentFailedEvent event) {
         log.warn("Processing PaymentFailedEvent for Order ID: {}", event.orderId());
 
-        String subject = "Payment Failed ❌";
+        String subject = "Payment Failed ";
         String body = "Hello,\n\nPayment failed for Order #" + event.orderId() + " due to: " + event.reason() + ".\nYour order has been cancelled.";
 
         emailService.sendEmail(CUSTOMER_EMAIL, subject, body);

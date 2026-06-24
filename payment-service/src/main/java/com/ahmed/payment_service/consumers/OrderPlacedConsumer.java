@@ -25,7 +25,6 @@ public class OrderPlacedConsumer {
     public void consumeOrderPlacedEvent(OrderPlacedEvent event) {
         log.info("Received OrderPlacedEvent for order: {}", event.orderNumber());
 
-        // تحويل الـ items مباشرة عشان نستخدمها في الـ events تحت
         List<PaymentProcessedEvent.PaymentOrderItem> paymentItems = event.items().stream()
                 .map(item -> new PaymentProcessedEvent.PaymentOrderItem(item.productId(), item.quantity()))
                 .toList();
